@@ -10,9 +10,11 @@ void setBuildStatus(String message, String state) {
 
 pipeline {
     agent any
+
     options {
         skipStagesAfterUnstable()
     }
+
     stages {
         stage('Build Server') {
             steps {
@@ -22,6 +24,7 @@ pipeline {
             }
         }
     }
+
     post {
         success {
             setBuildStatus("Build succeeded!", "SUCCESS")
