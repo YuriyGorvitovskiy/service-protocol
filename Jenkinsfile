@@ -18,7 +18,7 @@ pipeline {
             steps {
                 setBuildStatus("Build in progress...", "PENDING")
 
-                sh './gradlew'
+                sh './gradlew clean build publishToMavenLocal'
             }
         }
     }
